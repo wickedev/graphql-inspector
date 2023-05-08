@@ -27,7 +27,7 @@ export async function run() {
   core.info(`Ref: ${ref}`);
   core.info(`Commit SHA: ${commitSha}`);
 
-  const token = core.getInput('github-token', { required: true });
+  const token = core.getInput('github-token', { required: false });
   const checkName = core.getInput('name') || CHECK_NAME;
 
   let workspace = process.env.GITHUB_WORKSPACE;
