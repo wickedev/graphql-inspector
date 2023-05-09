@@ -64,7 +64,7 @@ export function fileLoader({
 
         throw new Error('result.repository.object.text is truncated and oid is null');
       }
-
+      console.log(result?.repository)
       throw new Error('result.repository.object.text is null');
     } catch (error) {
       console.log(result);
