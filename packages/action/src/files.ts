@@ -57,6 +57,7 @@ export function fileLoader({
         throw new Error('getBlobResponse.data.content is null');
       }
 
+      console.log('result: ', result)
       if (result?.repository?.object?.text) {
         if (result?.repository?.object?.isTruncated === false) {
           return result.repository.object.text;
@@ -64,7 +65,6 @@ export function fileLoader({
 
         throw new Error('result.repository.object.text is truncated and oid is null');
       }
-      console.log(result?.repository)
       throw new Error('result.repository.object.text is null');
     } catch (error) {
       console.log(result);
