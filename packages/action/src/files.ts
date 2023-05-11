@@ -34,7 +34,9 @@ export function fileLoader({
     console.log('file.workspace: ', file.workspace)
     if (file.workspace) {
       console.log('full path: ', resolve(file.workspace, file.path))
-      return readFileSync(resolve(file.workspace, file.path), 'utf8');
+      const file_content = readFileSync(resolve(file.workspace, file.path), 'utf8');
+      console.log('file_content: ', file_content)
+      return file_content
     }
     const result: any = await octokit.graphql(query, {
       repo,
