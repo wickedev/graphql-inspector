@@ -189,6 +189,8 @@ export async function printSchemaFromEndpoint(endpoint: Endpoint) {
     }),
   });
 
+  console.log('response: ', response)
+
   const { data } = await response.json();
 
   const introspection = data;
