@@ -191,7 +191,7 @@ export async function printSchemaFromEndpoint(endpoint: Endpoint) {
     }),
   });
 
-  console.log('response: ', response)
+  console.log('response: ', response.text())
 
   const { data } = await response.json();
 
@@ -226,9 +226,9 @@ export async function loadSources({
     useEndpoint
       ? printSchemaFromEndpoint(config.endpoint!)
       : loadFile({
-          ...oldPointer,
-          alias: 'oldSource',
-        }),
+        ...oldPointer,
+        alias: 'oldSource',
+      }),
     loadFile({
       ...newPointer,
       alias: 'newSource',
