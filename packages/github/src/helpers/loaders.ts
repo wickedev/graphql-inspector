@@ -204,7 +204,7 @@ export async function printSchemaFromEndpoint(endpoint: Endpoint) {
     }),
   );
 
-  console.log('schema: ', schema)
+  console.log('printSchema: ', schema)
 
   return schema;
 }
