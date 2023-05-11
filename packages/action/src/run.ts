@@ -145,6 +145,8 @@ export async function run() {
         }),
   ]);
 
+  console.log('schemaPath: ', schemaPath)
+
   core.info('Got both sources');
 
   let oldSchema: GraphQLSchema;
