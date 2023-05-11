@@ -112,6 +112,11 @@ export function parseEndpoint(endpoint: Endpoint): {
     return {
       url: endpoint,
       method: 'POST',
+      headers: {
+        'accept': 'application/json',
+        'cache-control': 'no-cache',
+        'content-type': 'application/json'
+      },
     };
   }
 
