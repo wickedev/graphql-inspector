@@ -191,7 +191,7 @@ export async function printSchemaFromEndpoint(endpoint: Endpoint) {
     }),
   });
 
-  console.log('response: ', response.text())
+  console.log('response: ', await response.text())
 
   const { data } = await response.json();
 
