@@ -31,6 +31,7 @@ export function fileLoader({
     path: string;
     workspace?: string;
   }): Promise<string> {
+    console.log('file.workspace: ', file.workspace)
     if (file.workspace) {
       return readFileSync(resolve(file.workspace, file.path), 'utf8');
     }
