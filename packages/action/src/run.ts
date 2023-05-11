@@ -129,6 +129,8 @@ export async function run() {
 
   const isNewSchemaUrl = endpoint && schemaPath.startsWith('http');
 
+  console.log('schemaPath: ', schemaPath)
+
   const [oldFile, newFile] = await Promise.all([
     endpoint
       ? printSchemaFromEndpoint(endpoint)
@@ -145,7 +147,7 @@ export async function run() {
         }),
   ]);
 
-  console.log('schemaPath: ', schemaPath)
+  console.log('schemaPath2: ', schemaPath)
 
   core.info('Got both sources');
 
