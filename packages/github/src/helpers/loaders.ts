@@ -181,7 +181,9 @@ export function createConfigLoader(
 export async function printSchemaFromEndpoint(endpoint: Endpoint) {
   const config = parseEndpoint(endpoint);
 
-  console.log('config: ', config)
+  console.log('config: ', config, "query", JSON.stringify({
+    query: getIntrospectionQuery().replace(/\s+/g, ' ').trim(),
+  }))
 
   const response = await fetch(config.url, {
     method: config.method,
