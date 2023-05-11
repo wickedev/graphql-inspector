@@ -198,12 +198,15 @@ export async function printSchemaFromEndpoint(endpoint: Endpoint) {
   const { data } = await response.json();
 
   const introspection = data;
-
-  return printSchema(
+  const schema = printSchema(
     buildClientSchema(introspection, {
       assumeValid: true,
     }),
   );
+
+  console.log('schema: ', schema)
+
+  return schema;
 }
 
 export async function loadSources({
