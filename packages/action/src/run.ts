@@ -141,7 +141,7 @@ export async function run() {
       : loadFile({
           path: schemaPath,
           ref,
-          workspace,
+          workspace: process.env.GITHUB_WORKSPACE,
         }),
   ]);
 
